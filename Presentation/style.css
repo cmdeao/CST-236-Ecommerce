@@ -1,0 +1,65 @@
+@charset "ISO-8859-1";
+label{
+		width: 110px;
+		display: inline-block; 
+	}
+	
+	*{
+		box-sizing: border-box;
+	}
+	
+	.column{
+		float: left;
+		position: relative;
+		left: 25%;
+		width: 25%;
+		padding: 10px;
+		height: 300px;
+		text-align:center;
+	}
+	
+	.row:after{
+		content:"";
+		display: table;
+		clear: both;
+	}
+	.topnav {
+		overflow: hidden;
+	}
+	.topnav a{
+		float: left;
+		position: relative;
+		left: 40%;
+		color: #333;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+		font-size: 17px;
+	}
+	.topnav a:hover{
+		background-color: #ddd;
+		font-size: 17px;
+	}
+	
+	.customButton{
+		 background-color: #4CAF50;
+	  border: none;
+	  color: white;
+	  padding: 15px 32px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 16px;
+	  margin: 4px 2px;
+	  cursor: pointer;
+	}
+	
+	.customButton2{
+		color: #333;
+	  border: none;
+	  text-align: center;
+	  text-decoration: none;
+	  font-size: 17px;
+	  cursor: pointer;
+	}
+	
