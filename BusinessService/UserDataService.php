@@ -32,7 +32,7 @@ class UserDataService
         $checkUsername = $person->getUsername();
         $checkEmail = $person->getEmail();
         
-        $query = mysqli_query($database, "SELECT * FROM users WHERE USERNAME = '$checkUsername'");
+        /*$query = mysqli_query($database, "SELECT * FROM users WHERE USERNAME = '$checkUsername'");
         
         if(!query)
         {
@@ -49,7 +49,7 @@ class UserDataService
         if(mysqli_num_rows($emailQuery) > 0)
         {
             return false;
-        }
+        }*/
         
         $sql = $database->prepare("INSERT INTO users (FIRST_NAME, LAST_NAME, EMAIL_ADDRESS, USERNAME, PASSWORD, ROLE) VALUES (?,?,?,?,?,?)");
         
