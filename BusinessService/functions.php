@@ -2,7 +2,7 @@
 
 function dbConnection()
 {
-    $dbLink = mysqli_connect("lyn7gfxo996yjjco.cbetxkdyhwsb.us-east-1.rds.amazonaws.com	", "fvbykphsy321i69g", "gclt1ar8zbxnd5fj", "xyf4cqz9j7pkfezs");
+    $dbLink = mysqli_connect("lyn7gfxo996yjjco.cbetxkdyhwsb.us-east-1.rds.amazonaws.com", "fvbykphsy321i69g", "gclt1ar8zbxnd5fj", "xyf4cqz9j7pkfezs");
     if($dbLink === false)
     {
         die("ERROR: Connection failed: " . mysqli_connect_error());
