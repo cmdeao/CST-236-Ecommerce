@@ -32,7 +32,7 @@ class UserDataService
         $checkUsername = $person->getUsername();
         $checkEmail = $person->getEmail();
         
-        /*$query = mysqli_query($database, "SELECT * FROM users WHERE USERNAME = '$checkUsername'");
+        $query = mysqli_query($database, "SELECT * FROM users WHERE USERNAME = '$checkUsername'");
         
         if(!query)
         {
@@ -49,7 +49,7 @@ class UserDataService
         if(mysqli_num_rows($emailQuery) > 0)
         {
             return false;
-        }*/
+        }
         
         $sql = $database->prepare("INSERT INTO users (FIRST_NAME, LAST_NAME, EMAIL_ADDRESS, USERNAME, PASSWORD, ROLE) VALUES (?,?,?,?,?,?)");
         
@@ -98,13 +98,25 @@ class UserDataService
     
     function updateUserInfo($user, $ID)
     {
+        echo "<br><br>INSIDE UPDATE";
         $database = dbConnection();
+        
+        $firstName = $user->getFirstName();
+        $lastName = $user->getLastName();
+        $email = $user->getEmail();
+        $username = $user->getUsername();
+        $password = $user->getPassword();
+        $role = $user->getRole();
+        
+        echo $firstName . $lastName . $email . $username . $password . $role . $ID;
         
         $query = $database->prepare("UPDATE users SET FIRST_NAME=?, LAST_NAME=?, EMAIL_ADDRESS=?, USERNAME=?, PASSWORD=?, 
             ROLE=? WHERE USER_ID=?");
         $query->bind_param('sssssii', $user->getFirstName(), $user->getLastName(), $user->getEmail(),
             $user->getUsername(), $user->getPassword(), $user->getRole(), $ID);
+//         $query->bind_param('sssssii', $firstName, $lastName, $email, $username, $password, $role, 17);
         $query->execute();
+        echo "STATEMENT EXECUTED";
         if($query)
         {
             return true;

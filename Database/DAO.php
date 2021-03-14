@@ -11,7 +11,7 @@ function registerUser($obj, $pw)
     
     $link = dbConnection();
     
-    /*$query = mysqli_query($link, "SELECT * FROM users WHERE USERNAME = '$username'");
+    $query = mysqli_query($link, "SELECT * FROM users WHERE USERNAME = '$username'");
     
     if(!query)
     {
@@ -28,7 +28,7 @@ function registerUser($obj, $pw)
     if(mysqli_num_rows($emailQuery) > 0)
     {
         return false;
-    }*/
+    }
     
     $sql = "INSERT INTO users (FIRST_NAME, LAST_NAME, EMAIL_ADDRESS, USERNAME, PASSWORD, ROLE) VALUES ('$firstname', '$lastname', '$email', '$username', '$password', 1)";
     
