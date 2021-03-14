@@ -26,7 +26,6 @@ if(isset($_POST['update']))
     $password = trim($_POST["password"]);
     $role = trim($_POST['role']);
     $ID = getTempID();
-    echo $ID;
     $service = new UserBusinessService();
     $user = new User($fName, $lName, $email, $username, $password, $role);
     if($service->updateUser($user, $ID))
