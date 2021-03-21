@@ -54,7 +54,6 @@ class ProductDataService
         $result = mysqli_query($database, $sqlSTR);
         if(mysqli_num_rows($result) == 0)
         {
-            echo "<br>INSIDE FIRST CHECK";
             $result->free();
             mysli_close($database);
         }
@@ -62,7 +61,6 @@ class ProductDataService
         {
             $row = $result->fetch_assoc();
             $product = new Product($row["ID"], $row["PRODUCT_NAME"], $row["PRODUCT_DESCRIPTION"], $row["PRICE"]);
-            //$product = new Product($row["ID"], $row["PRODUCT_NAME"], $row["PRODUCT_DESCRIPTION"], $row["PRICE"]);
             $result->free();
             mysqli_close($database);
             return $product;
