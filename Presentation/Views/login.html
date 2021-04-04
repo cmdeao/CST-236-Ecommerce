@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body style="background-color:powderblue;">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="../style.css">
+<title>Login Form</title>
+</head>
+<body>
+
+<div class="topnav">
+<h1 style="text-align:center;">Ecommerce Application</h1>
+</div>
+
+<hr size="5" noshade>
+<div class="row">
+	<div class="column" style="border-right: double;">
+		<h2>Login</h2>
+		<p>Please login to your account to continue.</p>
+		<form action="../Handlers/loginHandler.php" method="POST">
+            	<label for="username">Username:</label>
+            	<input type="text" id="username" name="username" required><br> 
+            	<label for="password">Password:</label>
+            	<input type="password" id="password" name="password" required><br>
+            	<input type="submit" value="Login">
+		</form>
+	</div>
+	<div class="column">
+		<h2>Register an Account</h2>
+		<p>* Required Fields</p>
+		<form action="../Handlers/registrationHandler.php" method="POST">
+            	<label for="firstname">*First Name:</label>
+            	<input type="text" id="firstname" name="firstname" required><br>
+            	<label for="lastname">*Last Name:</label>
+            	<input type="text" id="lastname" name="lastname" required><br>
+            	<label for="emailaddress">*Email Address:</label>
+            	<input type="email" id="emailaddress" name="emailaddress" placeholder="name@email.com" required><br>
+            	<label for="username">*Username:</label>
+            	<input type="text" id="username" name="username" required><br> 
+            	<label for="password">*Password:</label>
+            	<input type="password" id="password" name="password" required><br>
+            	<label for="confirmpass">*Re-enter Password:</label>
+            	<input type="password" id="confirmpass" name="confirmpass" required><br>
+            	<input type="submit" value="Register">
+		</form>
+	</div>
+</div>
+</body>
+</html>
